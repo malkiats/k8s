@@ -27,10 +27,18 @@ chmod +x kubectl
 mv kubectl  /usr/local/bin/
 kubectl version --client -o json
 
+### Start a cluster using the docker driver:
+minikube start --driver=docker
+
+### To make docker the default driver:
+minikube config set driver docker
+
 ### Add user minikube
 adduser minikube
 usermod -a -G docker minikube
 usermod -a -G minikube minikube 
+
+### Login with minikube user
 
 ### Start minikube
 minikube start
