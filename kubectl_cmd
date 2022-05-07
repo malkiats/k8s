@@ -53,7 +53,21 @@ Check status
 $ kubectl get deployment
 $ kubectl get pod
 
+Apply yaml deplyment
+$ kubectl apply -f nginx-depl.yaml
 
+Check status
+$ kubectl get deployment
+$ kubectl get pod
+
+More information on Pod
+$ kubectl get pod -o wide
+
+Status Auto output (Debug)
+$ kubectl get deployment nginx-depl -o yaml > nginx-depl-output
+
+Delete Deployment
+$ kubectl delete -f nginx-depl2.yaml
 ################################################
 
 [minikube@docker ~]$ cat nginx-depl.yaml
