@@ -1,0 +1,80 @@
+Get nodes
+$ kubectl get nodes
+
+Get Pods
+$ kubectl get pods
+
+Get Services
+$ kubectl get service
+
+Get help
+$ kubectl create -h
+
+Create nginx deployment
+$ kubectl create deployment nginx-depl --image=nginx
+
+Get deployment
+$ kubectl get deployment
+
+Get replicaset
+$ kubectl get replicaset
+
+Edit deployment
+$ kubectl edit deployment nginx-depl
+
+Check pod
+$ kubectl get pod
+
+Check replicaset
+$ kubectl get replicasetet
+
+Check logs
+$ kubectl logs nginx-depl-5c9d9cc4c
+
+Run mongo
+$ kubectl describe pod mongo-depl-85ddc6d66-x5q4d
+
+Describe status
+$ kubectl create deployment nginx-depl --image=nginx
+
+Edit Deployment
+$ kubectl edit deployment nginx-depl
+
+Delete Deployment
+$ kubectl delete deployment nginx-depl
+
+Deplyment Yaml for nginx
+
+
+Apply yaml deplyment
+$ kubectl apply -f nginx-depl.yaml
+
+Check status
+$ kubectl get deployment
+$ kubectl get pod
+
+
+################################################
+
+[minikube@docker ~]$ cat nginx-depl.yaml
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-depl
+  labels:
+    app: nginx
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.20
+        ports:
+        - containerPort: 80
