@@ -40,3 +40,17 @@ Troubleshooting Commands:
   update-check   Print current and latest version number
   version        Print the version of minikube
   options        Show a list of global command-line options (applies to all commands).
+
+$ kubectl get nodes
+NAME       STATUS   ROLES                  AGE    VERSION
+minikube   Ready    control-plane,master   148m   v1.23.3
+
+$ minikube status
+minikube
+type: Control Plane
+host: Running
+kubelet: Running
+apiserver: Running
+kubeconfig: Configured
+
+$ kubectl version
