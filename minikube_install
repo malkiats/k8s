@@ -27,8 +27,15 @@ chmod +x kubectl
 mv kubectl  /usr/local/bin/
 kubectl version --client -o json
 
+### Add user minikube
+adduser minikube
+usermod -a -G docker minikube
+usermod -a -G minikube minikube 
+
 ### Start minikube
 minikube start
 
 ### Test minikube and cmd
 minikube
+
+
