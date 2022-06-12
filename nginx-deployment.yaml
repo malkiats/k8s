@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-depl
+  name: nginx-deploy
   lables:
     app: nginx
 spec:
@@ -16,6 +16,7 @@ spec:
     spec:
       containers:
       - name: nginx
-        image: nginx:1.20
+        image: malkiats/nginxdeployk8s
+	imagePullPolicy: Always
         ports: 
         - containerPort: 8080
